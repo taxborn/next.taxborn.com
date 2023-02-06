@@ -12,11 +12,11 @@ const unselected_classes = "group transition duration-150 font-bold text-xl hove
 const selected_classes = "group transition duration-150 font-bold text-xl text-ctp-mauve hover:text-ctp-pink cursor-pointer";
 
 const unselected_underline = "block max-w-0 group-hover:max-w-full transition-all h-0.5 bg-ctp-mauve";
-const selected_underline = "block max-w-full transition-all h-0.5 bg-ctp-mauve";
+const selected_underline = "block max-w-full transition-all h-0.5 bg-ctp-mauve group-hover:bg-ctp-pink";
 ---
 {role === "button" ? 
 <li>
-    <a href={url} class="font-bold bg-ctp-mauve hover:bg-ctp-pink text-white rounded-md px-4 py-2">{title}</a>
+    <a href={url} class="transition duration-150 font-bold bg-ctp-mauve hover:bg-ctp-pink text-white rounded-md px-4 py-2">{title}</a>
 </li>
 :
 <li class="mr-4">
