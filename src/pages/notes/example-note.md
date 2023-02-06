@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
-title: 'An example note'
+title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 pubDate: 2022-02-05
 ---
 # My first note

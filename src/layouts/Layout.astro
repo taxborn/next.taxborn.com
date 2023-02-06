@@ -1,10 +1,12 @@
 ---
 import Navbar from '../components/Navbar.astro';
+
 export interface Props {
 	title?: string;
+	page: string;
 }
 
-const { title = 'welcome' } = Astro.props;
+const { title = 'welcome', page } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,10 +20,9 @@ const { title = 'welcome' } = Astro.props;
 		<title>{`taxborn.com | ${title}`}</title>
 	</head>
 	<body class="ctp-mocha bg-ctp-base">
-		<Navbar />		
-		<div class="container mx-auto">
-		<slot />
-
+		<Navbar page={page} />		
+		<div class="md:container md:mx-auto px-4">
+			<slot />
 		</div>
 	</body>
 </html>

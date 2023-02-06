@@ -1,0 +1,27 @@
+---
+export interface Props {
+	url: string;
+	title: string;
+	role?: string;
+    selected?: boolean;
+}
+
+const {url, title, role, selected = false} = Astro.props;
+
+const unselected_classes = "group transition duration-150 font-bold text-xl hover:text-ctp-mauve cursor-pointer";
+const selected_classes = "group transition duration-150 font-bold text-xl text-ctp-mauve hover:text-ctp-pink cursor-pointer";
+
+const unselected_underline = "block max-w-0 group-hover:max-w-full transition-all h-0.5 bg-ctp-mauve";
+const selected_underline = "block max-w-full transition-all h-0.5 bg-ctp-mauve";
+---
+{role === "button" ? 
+<li>
+    <a href={url} class="font-bold bg-ctp-mauve hover:bg-ctp-pink text-white rounded-md px-4 py-2">{title}</a>
+</li>
+:
+<li class="mr-4">
+    <a href={url} class={selected ? selected_classes : unselected_classes}>{title} 
+        <span class={selected ? selected_underline : unselected_underline}></span>
+    </a>
+</li>
+}

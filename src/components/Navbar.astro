@@ -1,16 +1,18 @@
 ---
+import NavbarItem from "./NavbarItem.astro";
 const { page } = Astro.props;
 ---
 <nav class="flex justify-between px-8 py-4">
     <div>
-        <a href="/" class="font-bold text-ctp-text text-2xl hover:text-ctp-mauve">Braxton Fair</a>
+        <!-- <a href="/" class="font-bold text-ctp-text text-2xl hover:text-ctp-mauve">Braxton Fair</a> -->
     </div>
     <div>
         <ul class="flex justify-end text-ctp-text">
-            <li class="mr-4"><a href="/" class="font-bold text-xl hover:text-ctp-mauve">Home</a></li>
-            <li class="mr-4"><a href="/about" class="font-bold text-xl hover:text-ctp-mauve">About</a></li>
-            <li class="mr-4"><a href="/portfolio" class="font-bold text-xl hover:text-ctp-mauve">Portfolio</a></li>
-            <li class="mr-4"><a href="/notes" class="font-bold text-xl hover:text-ctp-mauve">Notes</a></li>
+            <NavbarItem url="/" title="Home" selected={page === "home"} />
+            <NavbarItem url="/about" title="About" selected={page === "about"} />
+            <NavbarItem url="/portfolio" title="Portfolio" selected={page === "portfolio"} />
+            <NavbarItem url="/notes" title="Notes" selected={page === "notes"} />
+            <NavbarItem role="button" url="/" title="Resume" />
         </ul>
     </div>
 </nav>

@@ -1,9 +1,9 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-const posts = await Astro.glob('../note/*.md');
+import Layout from "../layouts/Layout.astro";
+const posts = await Astro.glob('./notes/*.md');
 const publishedPosts = posts.filter((post) => !post.frontmatter.draft);
 ---
-<Layout title="notes">
+<Layout title="notes" page="notes">
     <h1 class="text-6xl text-ctp-text font-bold">Notes</h1>
     <ul class="list-decimal">
         {publishedPosts.map(post => <li class="text-xl text-ctp-subtext1"><a href={post.url}>{post.frontmatter.title}</a></li>)}
