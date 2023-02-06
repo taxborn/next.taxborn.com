@@ -1,0 +1,12 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={`notes | ${frontmatter.title}`}>
+    <h1 class="text-8xl text-center tracking-tight font-black text-ctp-text">{frontmatter.title}</h1>
+    <p class="text-md text-ctp-subtext0 text-center">Posted at: {frontmatter.pubDate.slice(0, 10)}</p>
+    <div class="prose prose-invert prose-headings:text-ctp-text">
+        <slot />
+    </div>
+</Layout>
