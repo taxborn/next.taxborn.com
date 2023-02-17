@@ -4,25 +4,21 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={`notes | ${frontmatter.title}`} page="notes">
+            <a href="/notes" class="text-ctp-text underline text-right">&larr; Back to notes</a>
     <div class="flex justify-between">
         <div class="flex-1">
             <h1 class="text-8xl tracking-tight font-black text-ctp-text">{frontmatter.title}</h1>
         </div>
         <div class="flex flex-col justify-center">
-            <a href="/notes" class="text-ctp-text underline text-right">&larr; Back to notes</a>
             <span class="bg-blue-100 mt-2 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Posted at: {frontmatter.pubDate.slice(0, 10)}</span>
         </div>
     </div>
 
     <div id="tags" class="py-8">
-    <span class="bg-blue-100 mt-2 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Posted at: {frontmatter.pubDate.slice(0, 10)}</span>
-    <span class="bg-blue-100 mt-2 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Posted at: {frontmatter.pubDate.slice(0, 10)}</span>
-    <span class="bg-blue-100 mt-2 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Posted at: {frontmatter.pubDate.slice(0, 10)}</span>
-    <span class="bg-blue-100 mt-2 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Posted at: {frontmatter.pubDate.slice(0, 10)}</span>
-    <span class="bg-blue-100 mt-2 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Posted at: {frontmatter.pubDate.slice(0, 10)}</span>
+        {frontmatter.tags.map((tag: string) => <span class="bg-blue-100 mt-2 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{tag}</span>) }
     </div>
 
-    <div class="prose prose-invert prose-headings:text-ctp-text">
+    <div class="prose-lg prose-invert prose-headings:text-ctp-text">
         <slot />
     </div>
 </Layout>

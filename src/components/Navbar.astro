@@ -4,7 +4,12 @@ const { page } = Astro.props;
 ---
 <nav class="flex justify-between px-8 py-4">
     <div>
-        <!-- <a href="/" class="font-bold text-ctp-text text-2xl hover:text-ctp-mauve">Braxton Fair</a> -->
+        {page !== "home" ?
+        <a href="/" class="group transition duration-150 font-bold text-ctp-text text-2xl hover:text-ctp-mauve">
+            Braxton Fair
+            <span class="block max-w-0 group-hover:max-w-full transition-all h-0.5 bg-ctp-mauve"></span>
+        </a> : <a></a>
+        }
     </div>
     <div>
         <ul class="flex justify-end text-ctp-text">
